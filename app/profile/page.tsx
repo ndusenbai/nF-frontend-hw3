@@ -1,53 +1,21 @@
 'use client';
-import { useEffect, useState } from 'react';
-import API from '../api';
-
-interface ProfileData {
-  id: number;
-  username: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  gender: string;
-  image: string;
-}
+import useAuth from '../hooks/useAuth';
 
 export default function Profile() {
-  const [profile, setProfile] = useState<ProfileData | null>(null);
+  const user = useAuth();
 
-  useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        if (!token) {
-          return;
-        }
-        const res = await API.get<ProfileData>('/user/me', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setProfile(res.data);
-      } catch (error) {
-        console.error('Error fetching profile:', error);
-      }
-    };
-
-    fetchProfile();
-  }, []);
-
-  if (!profile) {
-    return <div>Loading...</div>;
+  if (!user) {
+    return <div>Loading...</div>; // Пока пользователь не загружен, показываем загрузку
   }
 
   return (
     <div className="container">
       <h1>Profile</h1>
-      <img src={profile.image} alt={profile.firstName} />
-      <p><strong>Email:</strong> {profile.email}</p>
-      <p><strong>Name:</strong> {profile.firstName} {profile.lastName}</p>
-      <p><strong>Gender:</strong> {profile.gender}</p>
-      <p><strong>Age:</strong> {profile.age}</p>
+      <img src={user.image} alt={user.firstName} />
+      <p><strong>Username:</strong> {user.username}</p>
+      <p><strong>Email:</strong> {user.email}</p>
+      <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
+      <p><strong>Gender:</strong> {user.gender}</p>
     </div>
   );
 }

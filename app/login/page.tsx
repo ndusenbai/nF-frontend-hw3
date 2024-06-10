@@ -1,7 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import useAuth from '../hooks/useAuth';
 import API from '../api';
+import Link from 'next/link';
 
 interface LoginResponse {
   id: number;
@@ -21,14 +23,33 @@ export default function Login() {
   const [error, setError] = useState('');
   const router = useRouter();
 
+  const user = useAuth();
+
+  if (user) {
+    return (
+        <div className='container flex flex-row justify-between p-24'>
+            <Link href="/profile">
+                <button className="btn btn-primary">
+                    GO Profile
+                </button>
+            </Link>
+            <Link href="/logout">
+                <button className="btn btn-primary">
+                    GO Logout
+                </button>
+            </Link>
+        </div>
+        
+    );
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const res = await API.post<LoginResponse>('/user/login', { username, password });
+      const res = await API.post<LoginResponse>('/user/me', { username, password });
       const userData = res.data;
 
-      // Сохраняем токен в localStorage или sessionStorage
       localStorage.setItem('token', userData.token);
       localStorage.setItem('refreshToken', userData.refreshToken);
 

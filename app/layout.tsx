@@ -1,7 +1,10 @@
+'use client';
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.css';
+import useAuth from './hooks/useAuth';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +18,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const user = useAuth();
+
   return (
     <html lang="ru">
       <body>
@@ -25,9 +30,11 @@ export default function RootLayout({
                 <li className="nav-item active">
                   <a className="nav-link" href="/">Home</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/posts">Posts</a>
-                </li>
+                {user && (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/posts">Posts</a>
+                  </li>
+                )}
                 <li className="nav-item">
                   <a className="nav-link" href="#">Pricing</a>
                 </li>
