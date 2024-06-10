@@ -1,0 +1,67 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./app/Home.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.Home_container__P8LeA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.Home_header__wW9db {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.Home_post__Y2yk_ {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.Home_title__Lguur {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.Home_body__maQ9Y {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.Home_reactions__xSRtF {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.Home_likes__tHytT {
+    color: #4caf50;
+}
+
+.Home_dislikes__Fb0EC {
+    color: #f44336;
+}
+
+.Home_link__dN7Z_ {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1e88e5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.Home_link__dN7Z_:hover {
+    color: #0d47a1;
+}
+

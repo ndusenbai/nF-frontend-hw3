@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,48 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ru">
+      <body>
+        <header>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container">
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                  <a className="nav-link" href="/">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/posts">Posts</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Pricing</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        {children}
+        <footer className="text-center text-lg-start bg-light text-muted">
+          <div className="container d-flex justify-content-center py-5">
+            <button type="button" className="btn btn-primary btn-lg btn-floating mx-2">
+              <i className="fab fa-facebook-f"></i>
+            </button>
+            <button type="button" className="btn btn-primary btn-lg btn-floating mx-2">
+              <i className="fab fa-youtube"></i>
+            </button>
+            <button type="button" className="btn btn-primary btn-lg btn-floating mx-2">
+              <i className="fab fa-instagram"></i>
+            </button>
+            <button type="button" className="btn btn-primary btn-lg btn-floating mx-2">
+              <i className="fab fa-twitter"></i>
+            </button>
+          </div>
+
+          <div className="text-center p-3">
+            © 2024 Copyright:
+            <a className="text-reset fw-bold" href="https://www.nfactorial.school/">nFactorial.school</a>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }

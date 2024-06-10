@@ -1,0 +1,48 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./app/[post]/PostDetail.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.PostDetail_container__V3vQ3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.PostDetail_card__juUQp {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.PostDetail_title__Uu06t {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.PostDetail_body___R5e8 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.PostDetail_reactions__dfUIA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.PostDetail_likes__FmFAW {
+    color: #4caf50;
+}
+
+.PostDetail_dislikes__Faisv {
+    color: #f44336;
+}
+
